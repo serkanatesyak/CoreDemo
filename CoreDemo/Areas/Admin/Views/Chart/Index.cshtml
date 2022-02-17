@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+
+        <div id="chartdiv" style="width:800px; height:600px ">
+
+            <h2>Chart Alanı</h2>
+        </div>
+    </div>
+
+</div>
+<script src="https://www.gstatic.com/charts/loader.js">
+</script>
+
+<script>
+    google.charts.load('current',{packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+</script>
+
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<body>
+    <div id="myChart" style="width:100%; max-width:600px; height:500px;">
+    </div>
+
+    <script>
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Contry', 'Mhl'],
+          ['Teknoloji',54.8],
+          ['Yazlım',48.6],
+          ['Spor',44.4]
+
+        ]);
+
+        var options = {
+          title:'Google Chart'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('chartdiv'));
+          chart.draw(data, options);
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
